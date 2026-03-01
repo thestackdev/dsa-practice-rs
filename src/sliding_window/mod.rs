@@ -9,3 +9,6 @@ pub use longest_repeating_character_replacement::Solution as LongestRepeatingCha
 
 mod maximum_sum_of_distinct_subarrays_with_length_k;
 pub use maximum_sum_of_distinct_subarrays_with_length_k::Solution as MaximumSumOfDistinctSubarraysWithLengthK;
+
+mod permutation_in_string;
+pub use permutation_in_string::Solution as PermutationInString;

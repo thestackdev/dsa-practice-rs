@@ -21,12 +21,14 @@ mod two_pointers;
 // use sliding_window::AnagramsInAString;
 // use sliding_window::LongestSubstringWithoutRepeatingCharacters;
 // use sliding_window::LongestRepeatingCharacterReplacement;
-use sliding_window::MaximumSumOfDistinctSubarraysWithLengthK;
+// use sliding_window::MaximumSumOfDistinctSubarraysWithLengthK;
+use sliding_window::PermutationInString;
 
 fn main() {
-    let nums = vec![1, 5, 4, 2, 9, 9, 9];
+    let s1 = String::from("ab");
+    let s2 = String::from("ab");
 
-    let result = MaximumSumOfDistinctSubarraysWithLengthK::maximum_subarray_sum(nums, 3);
+    let result = PermutationInString::check_inclusion(s1, s2);
 
-    println!("{result:?}");
+    println!("{:?}", result);
 }
