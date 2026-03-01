@@ -19,12 +19,14 @@ mod two_pointers;
 // use hashmap::FindAllDuplicatesInAnArray;
 
 // use sliding_window::AnagramsInAString;
-use sliding_window::LongestSubstringWithoutRepeatingCharacters;
+// use sliding_window::LongestSubstringWithoutRepeatingCharacters;
+// use sliding_window::LongestRepeatingCharacterReplacement;
+use sliding_window::MaximumSumOfDistinctSubarraysWithLengthK;
 
 fn main() {
-    let s = "pwwkew".to_string();
+    let nums = vec![1, 5, 4, 2, 9, 9, 9];
 
-    let result = LongestSubstringWithoutRepeatingCharacters::length_of_longest_substring(s);
+    let result = MaximumSumOfDistinctSubarraysWithLengthK::maximum_subarray_sum(nums, 3);
 
     println!("{result:?}");
 }
