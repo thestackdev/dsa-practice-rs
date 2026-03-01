@@ -1,3 +1,5 @@
 mod anagrams_in_a_string;
-
 pub use anagrams_in_a_string::Solution as AnagramsInAString;
+
+mod longest_substring_without_repeating_characters;
+pub use longest_substring_without_repeating_characters::Solution as LongestSubstringWithoutRepeatingCharacters;

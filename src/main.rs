@@ -18,13 +18,13 @@ mod two_pointers;
 // use hashmap::GroupAnagrams;
 // use hashmap::FindAllDuplicatesInAnArray;
 
-use sliding_window::AnagramsInAString;
+// use sliding_window::AnagramsInAString;
+use sliding_window::LongestSubstringWithoutRepeatingCharacters;
 
 fn main() {
-    let s = "cbaebabacd".to_string();
-    let p = "abc".to_string();
+    let s = "pwwkew".to_string();
 
-    let result = AnagramsInAString::find_anagrams(s, p);
+    let result = LongestSubstringWithoutRepeatingCharacters::length_of_longest_substring(s);
 
     println!("{result:?}");
 }
