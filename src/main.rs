@@ -9,6 +9,7 @@ mod two_pointers;
 // use two_pointers::ReverseString;
 // use two_pointers::TwoSumTwo;
 // use two_pointers::ThreeSum;
+use two_pointers::NextPermutation;
 
 // use hashmap::TwoSum;
 // use hashmap::FourSum;
@@ -16,4 +17,9 @@ mod two_pointers;
 // use hashmap::GroupAnagrams;
 // use hashmap::FindAllDuplicatesInAnArray;
 
-fn main() {}
+fn main() {
+    let mut nums = vec![1, 2, 4, 3];
+    NextPermutation::next_permutation(&mut nums);
+
+    println!("{nums:?}");
+}

@@ -15,3 +15,6 @@ pub use two_sum_two::Solution as TwoSumTwo;
 
 mod three_sum;
 pub use three_sum::Solution as ThreeSum;
+
+mod next_permutation;
+pub use next_permutation::Solution as NextPermutation;
