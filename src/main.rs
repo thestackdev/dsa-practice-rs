@@ -1,5 +1,6 @@
 #![allow(dead_code, unused_imports, unused_variables)]
 mod hashmap;
+mod sliding_window;
 mod two_pointers;
 
 // use two_pointers::Solution;
@@ -9,7 +10,7 @@ mod two_pointers;
 // use two_pointers::ReverseString;
 // use two_pointers::TwoSumTwo;
 // use two_pointers::ThreeSum;
-use two_pointers::NextPermutation;
+// use two_pointers::NextPermutation;
 
 // use hashmap::TwoSum;
 // use hashmap::FourSum;
@@ -17,9 +18,13 @@ use two_pointers::NextPermutation;
 // use hashmap::GroupAnagrams;
 // use hashmap::FindAllDuplicatesInAnArray;
 
-fn main() {
-    let mut nums = vec![1, 2, 4, 3];
-    NextPermutation::next_permutation(&mut nums);
+use sliding_window::AnagramsInAString;
 
-    println!("{nums:?}");
+fn main() {
+    let s = "cbaebabacd".to_string();
+    let p = "abc".to_string();
+
+    let result = AnagramsInAString::find_anagrams(s, p);
+
+    println!("{result:?}");
 }
