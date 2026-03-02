@@ -12,3 +12,6 @@ pub use maximum_sum_of_distinct_subarrays_with_length_k::Solution as MaximumSumO
 
 mod permutation_in_string;
 pub use permutation_in_string::Solution as PermutationInString;
+
+mod fruit_into_baskets;
+pub use fruit_into_baskets::Solution as FruitIntoBaskets;

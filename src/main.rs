@@ -22,13 +22,13 @@ mod two_pointers;
 // use sliding_window::LongestSubstringWithoutRepeatingCharacters;
 // use sliding_window::LongestRepeatingCharacterReplacement;
 // use sliding_window::MaximumSumOfDistinctSubarraysWithLengthK;
-use sliding_window::PermutationInString;
+// use sliding_window::PermutationInString;
+use sliding_window::FruitIntoBaskets;
 
 fn main() {
-    let s1 = String::from("ab");
-    let s2 = String::from("ab");
+    let fruits = vec![1, 2, 3, 2, 2];
 
-    let result = PermutationInString::check_inclusion(s1, s2);
+    let result = FruitIntoBaskets::total_fruit(fruits);
 
     println!("{:?}", result);
 }
