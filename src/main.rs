@@ -1,4 +1,5 @@
 #![allow(dead_code, unused_imports, unused_variables)]
+mod binary_search;
 mod hashmap;
 mod sliding_window;
 mod two_pointers;
@@ -23,12 +24,15 @@ mod two_pointers;
 // use sliding_window::LongestRepeatingCharacterReplacement;
 // use sliding_window::MaximumSumOfDistinctSubarraysWithLengthK;
 // use sliding_window::PermutationInString;
-use sliding_window::FruitIntoBaskets;
+// use sliding_window::FruitIntoBaskets;
+
+// use binary_search::SearchIntersectionPosition;
+use binary_search::FindFirstAndLastPositionOfElementInSortedArray;
 
 fn main() {
-    let fruits = vec![1, 2, 3, 2, 2];
+    let nums = vec![2, 2];
 
-    let result = FruitIntoBaskets::total_fruit(fruits);
+    let result = FindFirstAndLastPositionOfElementInSortedArray::search_range(nums, 3);
 
     println!("{:?}", result);
 }
