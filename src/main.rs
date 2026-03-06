@@ -2,6 +2,7 @@
 mod binary_search;
 mod hashmap;
 mod sliding_window;
+mod stacks;
 mod two_pointers;
 
 // use two_pointers::Solution;
@@ -28,12 +29,14 @@ mod two_pointers;
 
 // use binary_search::SearchIntersectionPosition;
 // use binary_search::FindFirstAndLastPositionOfElementInSortedArray;
-use binary_search::SearchInRotatedSortedArray;
+// use binary_search::SearchInRotatedSortedArray;
+
+use stacks::ValidParentheses;
 
 fn main() {
-    let nums = vec![3, 1];
+    let s: String = "[]".to_string();
 
-    let result = SearchInRotatedSortedArray::search(nums, 0);
+    let result = ValidParentheses::is_valid(s);
 
     println!("{:?}", result);
 }
