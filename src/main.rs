@@ -27,12 +27,13 @@ mod two_pointers;
 // use sliding_window::FruitIntoBaskets;
 
 // use binary_search::SearchIntersectionPosition;
-use binary_search::FindFirstAndLastPositionOfElementInSortedArray;
+// use binary_search::FindFirstAndLastPositionOfElementInSortedArray;
+use binary_search::SearchInRotatedSortedArray;
 
 fn main() {
-    let nums = vec![2, 2];
+    let nums = vec![3, 1];
 
-    let result = FindFirstAndLastPositionOfElementInSortedArray::search_range(nums, 3);
+    let result = SearchInRotatedSortedArray::search(nums, 0);
 
     println!("{:?}", result);
 }

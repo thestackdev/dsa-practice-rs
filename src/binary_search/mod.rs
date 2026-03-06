@@ -3,3 +3,6 @@ pub use search_insert_position::Solution as SearchIntersectionPosition;
 
 mod find_first_and_last_position_of_element_in_sorted_array;
 pub use find_first_and_last_position_of_element_in_sorted_array::Solution as FindFirstAndLastPositionOfElementInSortedArray;
+
+mod search_in_rotated_sorted_array;
+pub use search_in_rotated_sorted_array::Solution as SearchInRotatedSortedArray;
