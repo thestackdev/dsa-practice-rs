@@ -33,11 +33,12 @@ mod two_pointers;
 
 // use stacks::NextGreaterElement;
 // use stacks::NextGreaterElement1;
-use stacks::NextGreaterElement2;
+// use stacks::NextGreaterElement2;
+use stacks::BasicCalculator2;
 
 fn main() {
-    let nums1 = vec![5, 4, 3, 2, 1];
-    let result = NextGreaterElement2::next_greater_elements(nums1);
+    let s = "3+2*2".to_string();
+    let result = BasicCalculator2::calculate(s);
 
     println!("{:?}", result);
 }
