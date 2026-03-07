@@ -31,11 +31,13 @@ mod two_pointers;
 // use binary_search::FindFirstAndLastPositionOfElementInSortedArray;
 // use binary_search::SearchInRotatedSortedArray;
 
-use stacks::NextGreaterElement;
+// use stacks::NextGreaterElement;
+use stacks::NextGreaterElement1;
 
 fn main() {
-    let nums = vec![5, 2, 4, 6, 1];
-    let result = NextGreaterElement::next_greater_element(nums);
+    let nums1 = vec![4, 1, 2];
+    let nums2 = vec![1, 3, 4, 2];
+    let result = NextGreaterElement1::next_greater_element_optimised(nums1, nums2);
 
     println!("{:?}", result);
 }

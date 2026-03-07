@@ -3,3 +3,6 @@ pub use valid_parentheses::Solution as ValidParentheses;
 
 mod next_greater_element;
 pub use next_greater_element::Solution as NextGreaterElement;
+
+mod next_greater_element_1;
+pub use next_greater_element_1::Solution as NextGreaterElement1;
