@@ -31,12 +31,11 @@ mod two_pointers;
 // use binary_search::FindFirstAndLastPositionOfElementInSortedArray;
 // use binary_search::SearchInRotatedSortedArray;
 
-use stacks::ValidParentheses;
+use stacks::NextGreaterElement;
 
 fn main() {
-    let s: String = "[]".to_string();
-
-    let result = ValidParentheses::is_valid(s);
+    let nums = vec![5, 2, 4, 6, 1];
+    let result = NextGreaterElement::next_greater_element(nums);
 
     println!("{:?}", result);
 }
