@@ -32,12 +32,12 @@ mod two_pointers;
 // use binary_search::SearchInRotatedSortedArray;
 
 // use stacks::NextGreaterElement;
-use stacks::NextGreaterElement1;
+// use stacks::NextGreaterElement1;
+use stacks::NextGreaterElement2;
 
 fn main() {
-    let nums1 = vec![4, 1, 2];
-    let nums2 = vec![1, 3, 4, 2];
-    let result = NextGreaterElement1::next_greater_element_optimised(nums1, nums2);
+    let nums1 = vec![5, 4, 3, 2, 1];
+    let result = NextGreaterElement2::next_greater_elements(nums1);
 
     println!("{:?}", result);
 }

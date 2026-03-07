@@ -6,3 +6,6 @@ pub use next_greater_element::Solution as NextGreaterElement;
 
 mod next_greater_element_1;
 pub use next_greater_element_1::Solution as NextGreaterElement1;
+
+mod next_greater_element_2;
+pub use next_greater_element_2::Solution as NextGreaterElement2;
