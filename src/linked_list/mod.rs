@@ -1,0 +1,4 @@
+mod remove_nth_node_from_the_end_of_list;
+
+pub use remove_nth_node_from_the_end_of_list::ListNode;
+pub use remove_nth_node_from_the_end_of_list::Solution as RemoveNthNodeFromEndOfList;

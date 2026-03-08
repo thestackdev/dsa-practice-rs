@@ -2,6 +2,7 @@
 mod algorithms;
 mod binary_search;
 mod hashmap;
+mod linked_list;
 mod sliding_window;
 mod stacks;
 mod two_pointers;
@@ -37,18 +38,14 @@ mod two_pointers;
 // use stacks::NextGreaterElement2;
 // use stacks::BasicCalculator2;
 
-use std::collections::linked_list;
+// use algorithms::LinkedList;
 
-use algorithms::LinkedList;
+use linked_list::{ListNode, RemoveNthNodeFromEndOfList};
 
 fn main() {
-    let mut linked_list = LinkedList::new();
-    linked_list.insert_head(10);
-    linked_list.insert_last(20);
-    println!("{}", linked_list.insert_at_index(2, 30));
-    println!("{}", linked_list.insert_at_index(3, 40));
-    linked_list.print();
-    linked_list.reverse();
-    println!("{}", linked_list.len());
-    linked_list.print();
+    let list = Some(Box::new(ListNode { val: 1, next: None }));
+
+    let result = RemoveNthNodeFromEndOfList::remove_nth_from_end(list, 1);
+
+    println!("{:?}", result);
 }
