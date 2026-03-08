@@ -1,4 +1,5 @@
 #![allow(dead_code, unused_imports, unused_variables)]
+mod algorithms;
 mod binary_search;
 mod hashmap;
 mod sliding_window;
@@ -34,11 +35,20 @@ mod two_pointers;
 // use stacks::NextGreaterElement;
 // use stacks::NextGreaterElement1;
 // use stacks::NextGreaterElement2;
-use stacks::BasicCalculator2;
+// use stacks::BasicCalculator2;
+
+use std::collections::linked_list;
+
+use algorithms::LinkedList;
 
 fn main() {
-    let s = "3+2*2".to_string();
-    let result = BasicCalculator2::calculate(s);
-
-    println!("{:?}", result);
+    let mut linked_list = LinkedList::new();
+    linked_list.insert_head(10);
+    linked_list.insert_last(20);
+    println!("{}", linked_list.insert_at_index(2, 30));
+    println!("{}", linked_list.insert_at_index(3, 40));
+    linked_list.print();
+    linked_list.reverse();
+    println!("{}", linked_list.len());
+    linked_list.print();
 }
