@@ -44,8 +44,6 @@ use linked_list::{ListNode, RemoveNthNodeFromEndOfList};
 
 fn main() {
     let list = Some(Box::new(ListNode { val: 1, next: None }));
-
     let result = RemoveNthNodeFromEndOfList::remove_nth_from_end(list, 1);
-
     println!("{:?}", result);
 }

@@ -14,25 +14,24 @@ impl ListNode {
 pub struct Solution;
 
 impl Solution {
-    pub fn remove_nth_from_end(mut head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
-        if head.is_none() {
-            return head;
+    pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
+        let mut dummy = Box::new(ListNode { val: 0, next: head });
+        let mut length = 0;
+
+        let mut current = &dummy.next;
+        while let Some(node) = current {
+            current = &node.next;
+            length += 1;
         }
 
-        let mut current = head.as_mut();
-        let mut current_index = 0;
-
-        while current.is_some() && current_index < n {
-            current = current.unwrap().next.as_mut();
-            current_index += 1;
+        let target = length - n;
+        let mut current = &mut dummy;
+        for _ in 0..target {
+            current = current.next.as_mut().unwrap();
         }
 
-        if let Some(node) = current {
-            if let Some(next) = node.next.as_mut() {
-                node.next = next.next.take();
-            }
-        }
+        current.next = current.next.as_mut().unwrap().next.take();
 
-        head
+        dummy.next
     }
 }
