@@ -39,12 +39,13 @@ mod two_pointers;
 // use stacks::BasicCalculator2;
 
 // use algorithms::LinkedList;
-use algorithms::MinHeap;
+// use algorithms::MinHeap;
+use algorithms::MaxHeap;
 
 // use linked_list::{ListNode, RemoveNthNodeFromEndOfList};
 
 fn main() {
-    let mut min_heap = MinHeap::new();
+    let mut min_heap = MaxHeap::new();
     min_heap.push(200);
     min_heap.push(10);
     min_heap.push(20);
@@ -53,9 +54,9 @@ fn main() {
     println!("{:?}", min_heap.peek());
 
     min_heap.pop();
-    min_heap.pop();
-    min_heap.pop();
-    min_heap.pop();
-    min_heap.pop();
+    // min_heap.pop();
+    // min_heap.pop();
+    // min_heap.pop();
+    // min_heap.pop();
     println!("{:?}", min_heap.peek());
 }

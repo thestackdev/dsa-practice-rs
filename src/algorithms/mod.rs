@@ -3,3 +3,6 @@ pub use linked_list::LinkedList;
 
 mod min_heap;
 pub use min_heap::MinHeap;
+
+mod max_heap;
+pub use max_heap::MaxHeap;
