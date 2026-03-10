@@ -39,11 +39,23 @@ mod two_pointers;
 // use stacks::BasicCalculator2;
 
 // use algorithms::LinkedList;
+use algorithms::MinHeap;
 
-use linked_list::{ListNode, RemoveNthNodeFromEndOfList};
+// use linked_list::{ListNode, RemoveNthNodeFromEndOfList};
 
 fn main() {
-    let list = Some(Box::new(ListNode { val: 1, next: None }));
-    let result = RemoveNthNodeFromEndOfList::remove_nth_from_end(list, 1);
-    println!("{:?}", result);
+    let mut min_heap = MinHeap::new();
+    min_heap.push(200);
+    min_heap.push(10);
+    min_heap.push(20);
+    min_heap.push(100);
+
+    println!("{:?}", min_heap.peek());
+
+    min_heap.pop();
+    min_heap.pop();
+    min_heap.pop();
+    min_heap.pop();
+    min_heap.pop();
+    println!("{:?}", min_heap.peek());
 }
