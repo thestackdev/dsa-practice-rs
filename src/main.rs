@@ -2,6 +2,7 @@
 mod algorithms;
 mod binary_search;
 mod hashmap;
+mod heaps;
 mod linked_list;
 mod sliding_window;
 mod stacks;
@@ -38,25 +39,21 @@ mod two_pointers;
 // use stacks::NextGreaterElement2;
 // use stacks::BasicCalculator2;
 
-// use algorithms::LinkedList;
-// use algorithms::MinHeap;
-use algorithms::MaxHeap;
-
 // use linked_list::{ListNode, RemoveNthNodeFromEndOfList};
 
+// use algorithms::LinkedList;
+// use algorithms::MinHeap;
+// use algorithms::MaxHeap;
+
+use heaps::K_MOST_FREQ_ELEMENTS;
+
 fn main() {
-    let mut min_heap = MaxHeap::new();
-    min_heap.push(200);
-    min_heap.push(10);
-    min_heap.push(20);
-    min_heap.push(100);
+    let strs = ["i", "love", "leetcode", "i", "love", "coding"]
+        .iter()
+        .map(|x| x.to_string())
+        .collect();
 
-    println!("{:?}", min_heap.peek());
+    let result = K_MOST_FREQ_ELEMENTS::top_k_frequent(strs, 2);
 
-    min_heap.pop();
-    // min_heap.pop();
-    // min_heap.pop();
-    // min_heap.pop();
-    // min_heap.pop();
-    println!("{:?}", min_heap.peek());
+    println!("{:?}", result);
 }
