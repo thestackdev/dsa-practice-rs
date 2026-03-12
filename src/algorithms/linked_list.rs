@@ -1,3 +1,5 @@
+use std::f32::NEG_INFINITY;
+
 struct Node {
     value: i32,
     next: Option<Box<Node>>,

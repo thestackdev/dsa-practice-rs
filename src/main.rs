@@ -41,19 +41,18 @@ mod two_pointers;
 
 // use linked_list::{ListNode, RemoveNthNodeFromEndOfList};
 
-// use algorithms::LinkedList;
+use algorithms::LinkedList;
 // use algorithms::MinHeap;
 // use algorithms::MaxHeap;
 
-use heaps::K_MOST_FREQ_ELEMENTS;
+// use heaps::K_MOST_FREQ_ELEMENTS;
+// use heaps::TOP_K_FREQ_ELEMENTS;
 
 fn main() {
-    let strs = ["i", "love", "leetcode", "i", "love", "coding"]
-        .iter()
-        .map(|x| x.to_string())
-        .collect();
+    let mut linked_list = LinkedList::new();
 
-    let result = K_MOST_FREQ_ELEMENTS::top_k_frequent(strs, 2);
+    linked_list.insert_head(20);
+    linked_list.insert_head(10);
 
-    println!("{:?}", result);
+    // linked_list.print();
 }
