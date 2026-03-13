@@ -1,36 +1,43 @@
 use std::{cmp::Reverse, collections::BinaryHeap};
 
 struct MedianFinder {
-    left_half: BinaryHeap<i32>,
-    right_half: BinaryHeap<Reverse<i32>>,
+    left_heap: BinaryHeap<i32>,
+    right_heap: BinaryHeap<Reverse<i32>>,
 }
 
 impl MedianFinder {
     fn new() -> Self {
         Self {
-            left_half: BinaryHeap::new(),
-            right_half: BinaryHeap::new(),
+            left_heap: BinaryHeap::new(),
+            right_heap: BinaryHeap::new(),
         }
     }
 
     fn add_num(&mut self, num: i32) {
-        if self.left_half.is_empty() || &num <= self.left_half.peek().unwrap() {
-            self.left_half.push(num);
+        if self.left_heap.is_empty() || &num <= self.left_heap.peek().unwrap() {
+            self.left_heap.push(num);
 
-            if self.left_half.len() > self.right_half.len() {
-                let val = self.left_half.pop().unwrap();
-                self.right_half.push(Reverse(val));
+            if self.left_heap.len() > self.right_heap.len() {
+                let val = self.left_heap.pop().unwrap();
+                self.right_heap.push(Reverse(val));
             }
         } else {
-            self.right_half.push(Reverse(num));
+            self.right_heap.push(Reverse(num));
 
-            if self.right_half.len() > self.left_half.len() {
-                let val = self.right_half.pop().unwrap();
-                self.left_half.push(Reverse(val));
+            if self.right_heap.len() > self.left_heap.len() {
+                let Reverse(val) = self.right_heap.pop().unwrap();
+                self.left_heap.push(val);
             }
         }
     }
 
-    fn find_median(&self) -> f64 {}
-}
+    fn find_median(&self) -> f64 {
+        if self.left_heap.len() == self.right_heap.len() {
+            return (*self.left_heap.peek().unwrap_or(&0) as f64
+                + self.right_heap.peek().unwrap_or(&Reverse(0)).0 as f64)
+                / 2.0;
+        }
 
+        *self.left_heap.peek().unwrap_or(&0) as f64
+    }
+}
