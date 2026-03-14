@@ -5,6 +5,7 @@ mod hashmap;
 mod heaps;
 mod intervals;
 mod linked_list;
+mod prefix_sums;
 mod sliding_window;
 mod stacks;
 mod two_pointers;
@@ -54,29 +55,12 @@ mod two_pointers;
 // use intervals::IntervalListIntersection;
 // use intervals::LargestOverlapOfIntervals;
 // use intervals::InsertInterval;
-use intervals::NonOverlappingIntervals;
+// use intervals::NonOverlappingIntervals;
+
+use prefix_sums::RangeSumQueryImmutable;
 
 fn main() {
-    let intervals = vec![
-        [-52, 31],
-        [-73, -26],
-        [82, 97],
-        [-65, -11],
-        [-62, -49],
-        [95, 99],
-        [58, 95],
-        [-31, 49],
-        [66, 98],
-        [-63, 2],
-        [30, 47],
-        [-40, -26],
-    ]
-    .iter()
-    .map(|x| Vec::from(x))
-    .collect();
-
-    println!(
-        "{:?}",
-        NonOverlappingIntervals::erase_overlap_intervals(intervals)
-    )
+    let nums = vec![-2, 0, 3, -5, 2, -1];
+    let ps = RangeSumQueryImmutable::new(nums);
+    println!("{:?}", ps.sum_range(0, 5));
 }
