@@ -1,11 +1,11 @@
 use std::{cmp::Reverse, collections::BinaryHeap};
 
-struct MedianFinder {
+pub struct Solution {
     left_heap: BinaryHeap<i32>,
     right_heap: BinaryHeap<Reverse<i32>>,
 }
 
-impl MedianFinder {
+impl Solution {
     fn new() -> Self {
         Self {
             left_heap: BinaryHeap::new(),

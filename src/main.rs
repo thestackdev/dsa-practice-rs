@@ -3,6 +3,7 @@ mod algorithms;
 mod binary_search;
 mod hashmap;
 mod heaps;
+mod intervals;
 mod linked_list;
 mod sliding_window;
 mod stacks;
@@ -41,18 +42,17 @@ mod two_pointers;
 
 // use linked_list::{ListNode, RemoveNthNodeFromEndOfList};
 
-use algorithms::LinkedList;
+// use algorithms::LinkedList;
 // use algorithms::MinHeap;
 // use algorithms::MaxHeap;
 
 // use heaps::K_MOST_FREQ_ELEMENTS;
 // use heaps::TOP_K_FREQ_ELEMENTS;
 
+use intervals::MergeIntervals;
+
 fn main() {
-    let mut linked_list = LinkedList::new();
-
-    linked_list.insert_head(20);
-    linked_list.insert_head(10);
-
-    // linked_list.print();
+    let intervals = vec![vec![1, 3], vec![2, 6], vec![8, 10], vec![15, 18]];
+    let result = MergeIntervals::merge(intervals);
+    println!("{:?}", result);
 }
