@@ -49,10 +49,14 @@ mod two_pointers;
 // use heaps::K_MOST_FREQ_ELEMENTS;
 // use heaps::TOP_K_FREQ_ELEMENTS;
 
-use intervals::MergeIntervals;
+// use intervals::MergeIntervals;
+use intervals::{MeetingRooms, MeetingRoomsInterval};
 
 fn main() {
-    let intervals = vec![vec![1, 3], vec![2, 6], vec![8, 10], vec![15, 18]];
-    let result = MergeIntervals::merge(intervals);
-    println!("{:?}", result);
+    let intervals = vec![
+        MeetingRoomsInterval::new(0, 30),
+        MeetingRoomsInterval::new(5, 10),
+        MeetingRoomsInterval::new(15, 20),
+    ];
+    println!("{:?}", MeetingRooms::can_attend_meetings(intervals));
 }
