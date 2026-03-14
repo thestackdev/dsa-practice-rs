@@ -50,13 +50,22 @@ mod two_pointers;
 // use heaps::TOP_K_FREQ_ELEMENTS;
 
 // use intervals::MergeIntervals;
-use intervals::{MeetingRooms, MeetingRoomsInterval};
+// use intervals::{MeetingRooms, MeetingRoomsInterval};
+use intervals::IntervalListIntersection;
 
 fn main() {
-    let intervals = vec![
-        MeetingRoomsInterval::new(0, 30),
-        MeetingRoomsInterval::new(5, 10),
-        MeetingRoomsInterval::new(15, 20),
-    ];
-    println!("{:?}", MeetingRooms::can_attend_meetings(intervals));
+    let first_list = vec![[0, 2], [5, 10], [13, 23], [24, 25]]
+        .iter()
+        .map(|x| Vec::from(x))
+        .collect();
+
+    let second_list = vec![[1, 5], [8, 12], [15, 24], [25, 26]]
+        .iter()
+        .map(|x| Vec::from(x))
+        .collect();
+
+    println!(
+        "{:?}",
+        IntervalListIntersection::interval_intersection(first_list, second_list)
+    )
 }
