@@ -13,3 +13,6 @@ pub use largest_overlap_of_intervals::Solution as LargestOverlapOfIntervals;
 
 mod insert_interval;
 pub use insert_interval::Solution as InsertInterval;
+
+mod non_overlapping_intervals;
+pub use non_overlapping_intervals::Solution as NonOverlappingIntervals;

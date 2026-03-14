@@ -53,14 +53,30 @@ mod two_pointers;
 // use intervals::{MeetingRooms, MeetingRoomsInterval};
 // use intervals::IntervalListIntersection;
 // use intervals::LargestOverlapOfIntervals;
-use intervals::InsertInterval;
+// use intervals::InsertInterval;
+use intervals::NonOverlappingIntervals;
 
 fn main() {
-    let intervals = vec![[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
-        .iter()
-        .map(|x| Vec::from(x))
-        .collect();
-    let new_interval = vec![4, 8];
+    let intervals = vec![
+        [-52, 31],
+        [-73, -26],
+        [82, 97],
+        [-65, -11],
+        [-62, -49],
+        [95, 99],
+        [58, 95],
+        [-31, 49],
+        [66, 98],
+        [-63, 2],
+        [30, 47],
+        [-40, -26],
+    ]
+    .iter()
+    .map(|x| Vec::from(x))
+    .collect();
 
-    println!("{:?}", InsertInterval::insert(intervals, new_interval));
+    println!(
+        "{:?}",
+        NonOverlappingIntervals::erase_overlap_intervals(intervals)
+    )
 }
