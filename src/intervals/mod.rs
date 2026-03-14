@@ -10,3 +10,6 @@ pub use interval_list_intersection::Solution as IntervalListIntersection;
 
 mod largest_overlap_of_intervals;
 pub use largest_overlap_of_intervals::Solution as LargestOverlapOfIntervals;
+
+mod insert_interval;
+pub use insert_interval::Solution as InsertInterval;

@@ -52,16 +52,15 @@ mod two_pointers;
 // use intervals::MergeIntervals;
 // use intervals::{MeetingRooms, MeetingRoomsInterval};
 // use intervals::IntervalListIntersection;
-use intervals::LargestOverlapOfIntervals;
+// use intervals::LargestOverlapOfIntervals;
+use intervals::InsertInterval;
 
 fn main() {
-    let first_list = vec![[1, 3], [2, 6], [4, 8], [6, 7], [5, 7]]
+    let intervals = vec![[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
         .iter()
         .map(|x| Vec::from(x))
         .collect();
+    let new_interval = vec![4, 8];
 
-    println!(
-        "{:?}",
-        LargestOverlapOfIntervals::largest_overlap(first_list)
-    )
+    println!("{:?}", InsertInterval::insert(intervals, new_interval));
 }
