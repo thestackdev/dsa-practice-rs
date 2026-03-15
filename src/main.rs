@@ -57,10 +57,10 @@ mod two_pointers;
 // use intervals::InsertInterval;
 // use intervals::NonOverlappingIntervals;
 
-use prefix_sums::RangeSumQueryImmutable;
+// use prefix_sums::RangeSumQueryImmutable;
+use prefix_sums::SubArraySumEqualsK;
 
 fn main() {
-    let nums = vec![-2, 0, 3, -5, 2, -1];
-    let ps = RangeSumQueryImmutable::new(nums);
-    println!("{:?}", ps.sum_range(0, 5));
+    let nums = vec![3, 3, 3, 3];
+    println!("{:?}", SubArraySumEqualsK::subarray_sum(nums, 6));
 }
