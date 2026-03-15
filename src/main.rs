@@ -31,6 +31,7 @@ mod two_pointers;
 // use sliding_window::MaximumSumOfDistinctSubarraysWithLengthK;
 // use sliding_window::PermutationInString;
 // use sliding_window::FruitIntoBaskets;
+use sliding_window::MinimumSizeSubArray;
 
 // use binary_search::SearchIntersectionPosition;
 // use binary_search::FindFirstAndLastPositionOfElementInSortedArray;
@@ -58,9 +59,9 @@ mod two_pointers;
 // use intervals::NonOverlappingIntervals;
 
 // use prefix_sums::RangeSumQueryImmutable;
-use prefix_sums::SubArraySumEqualsK;
+// use prefix_sums::SubArraySumEqualsK;
 
 fn main() {
-    let nums = vec![3, 3, 3, 3];
-    println!("{:?}", SubArraySumEqualsK::subarray_sum(nums, 6));
+    let nums = vec![1, 2, 3, 4, 5];
+    println!("{:?}", MinimumSizeSubArray::min_sub_array_len(11, nums));
 }

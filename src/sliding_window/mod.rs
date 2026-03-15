@@ -15,3 +15,6 @@ pub use permutation_in_string::Solution as PermutationInString;
 
 mod fruit_into_baskets;
 pub use fruit_into_baskets::Solution as FruitIntoBaskets;
+
+mod minimum_size_subarray;
+pub use minimum_size_subarray::Solution as MinimumSizeSubArray;
