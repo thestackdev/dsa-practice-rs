@@ -6,3 +6,6 @@ pub use find_first_and_last_position_of_element_in_sorted_array::Solution as Fin
 
 mod search_in_rotated_sorted_array;
 pub use search_in_rotated_sorted_array::Solution as SearchInRotatedSortedArray;
+
+mod sqrt;
+pub use sqrt::Solution as Sqrt;

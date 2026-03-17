@@ -31,11 +31,12 @@ mod two_pointers;
 // use sliding_window::MaximumSumOfDistinctSubarraysWithLengthK;
 // use sliding_window::PermutationInString;
 // use sliding_window::FruitIntoBaskets;
-use sliding_window::MinimumSizeSubArray;
+// use sliding_window::MinimumSizeSubArray;
 
 // use binary_search::SearchIntersectionPosition;
 // use binary_search::FindFirstAndLastPositionOfElementInSortedArray;
 // use binary_search::SearchInRotatedSortedArray;
+// use binary_search::Sqrt;
 
 // use stacks::NextGreaterElement;
 // use stacks::NextGreaterElement1;
@@ -47,6 +48,7 @@ use sliding_window::MinimumSizeSubArray;
 // use algorithms::LinkedList;
 // use algorithms::MinHeap;
 // use algorithms::MaxHeap;
+use algorithms::DoublyLinkedList;
 
 // use heaps::K_MOST_FREQ_ELEMENTS;
 // use heaps::TOP_K_FREQ_ELEMENTS;
@@ -62,6 +64,28 @@ use sliding_window::MinimumSizeSubArray;
 // use prefix_sums::SubArraySumEqualsK;
 
 fn main() {
-    let nums = vec![1, 2, 3, 4, 5];
-    println!("{:?}", MinimumSizeSubArray::min_sub_array_len(11, nums));
+    let mut list = DoublyLinkedList::new();
+
+    list.push_back(1);
+    list.push_back(2);
+    list.push_back(3);
+    list.push_back(4);
+    list.push_back(5);
+
+    println!("List:");
+    list.print_nodes();
+
+    println!("\nPopping front: {:?}", list.pop_front());
+    println!("Popping front: {:?}", list.pop_front());
+
+    println!("\nList after pops:");
+    list.print_nodes();
+
+    list.push_front(2);
+    list.push_front(1);
+
+    println!("\nList after push_front:");
+    list.print_nodes();
+
+    println!("\nLength: {}", list.len);
 }
