@@ -9,3 +9,6 @@ pub use max_heap::MaxHeap;
 
 mod doubly_linked_list;
 pub use doubly_linked_list::DoublyLinkedList;
+
+mod trees;
+pub use trees::Tree;
