@@ -8,6 +8,7 @@ mod linked_list;
 mod prefix_sums;
 mod sliding_window;
 mod stacks;
+mod trees;
 mod two_pointers;
 
 // use two_pointers::Solution;
@@ -49,7 +50,7 @@ mod two_pointers;
 // use algorithms::MinHeap;
 // use algorithms::MaxHeap;
 // use algorithms::DoublyLinkedList;
-use algorithms::Tree;
+// use algorithms::Tree;
 
 // use heaps::K_MOST_FREQ_ELEMENTS;
 // use heaps::TOP_K_FREQ_ELEMENTS;
@@ -64,20 +65,6 @@ use algorithms::Tree;
 // use prefix_sums::RangeSumQueryImmutable;
 // use prefix_sums::SubArraySumEqualsK;
 
-fn main() {
-    let mut t = Tree::new();
-    for v in [5, 3, 7, 1, 4] {
-        t.insert(v);
-    }
+use trees::InvertBinaryTree;
 
-    println!("In Order");
-    t.in_order();
-    println!("Pre Order");
-    t.pre_order();
-    println!("Post Order");
-    t.post_order();
-
-    println!("Inorder after invert tree");
-    t.invert_using_stack();
-    t.in_order();
-}
+fn main() {}
