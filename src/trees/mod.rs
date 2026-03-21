@@ -15,3 +15,9 @@ pub use validate_binary_search_tree::Solution as ValidateBinarySearchTree;
 
 mod lowest_common_ansistor;
 pub use lowest_common_ansistor::Solution as LowestCommonAnsistor;
+
+mod construct_binary_tree;
+pub use construct_binary_tree::Solution as ConstructBinaryTree;
+
+mod max_sum_binary_tree;
+pub use max_sum_binary_tree::Solution as MaxSumBinaryTree;
