@@ -1,5 +1,5 @@
 use std::cell::{Ref, RefCell};
-use std::rc::Rc;
+use std::rc::{self, Rc};
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -27,27 +27,25 @@ impl Solution {
     }
 
     fn check_balanced(node: &Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        match node {
-            None => 0,
-            Some(n) => {
-                let n = n.borrow_mut();
+        if let Some(node) = node {
+            let n = node.borrow_mut();
+            let left = Self::check_balanced(&n.left);
+            if left == -1 {
+                return -1;
+            }
 
-                let left_height = Self::check_balanced(&n.left);
-                if left_height == -1 {
-                    return -1;
-                }
+            let right = Self::check_balanced(&n.right);
+            if right == -1 {
+                return -1;
+            }
 
-                let right_height = Self::check_balanced(&n.right);
-                if right_height == -1 {
-                    return -1;
-                }
-
-                if (left_height - right_height).abs() > 1 {
-                    -1
-                } else {
-                    1 + left_height.max(right_height)
-                }
+            if (left - right).abs() > 1 {
+                return -1;
+            } else {
+                return 1 + left.max(right);
             }
         }
+
+        0
     }
 }
