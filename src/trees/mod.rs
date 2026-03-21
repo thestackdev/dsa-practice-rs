@@ -12,3 +12,6 @@ pub use maximum_width_of_binary_tree::Solution as MaximumWidthOfBinaryTree;
 
 mod validate_binary_search_tree;
 pub use validate_binary_search_tree::Solution as ValidateBinarySearchTree;
+
+mod lowest_common_ansistor;
+pub use lowest_common_ansistor::Solution as LowestCommonAnsistor;
