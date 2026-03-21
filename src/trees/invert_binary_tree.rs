@@ -17,6 +17,7 @@ impl TreeNode {
 }
 
 use std::cell::RefCell;
+use std::mem;
 use std::rc::Rc;
 
 pub struct Solution;
@@ -31,6 +32,27 @@ impl Solution {
 
             n.left = right;
             n.right = left;
+        }
+
+        root
+    }
+
+    pub fn invert_tree_stack(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
+        let mut stack = vec![root.clone()];
+
+        while let Some(node) = stack.pop() {
+            if let Some(n) = node {
+                let mut n = n.borrow_mut();
+
+                let left = n.left.take();
+                let right = n.right.take();
+
+                n.left = right.clone();
+                n.right = left.clone();
+
+                Self::invert_tree_stack(left);
+                Self::invert_tree_stack(right);
+            }
         }
 
         root
