@@ -6,3 +6,6 @@ pub use balanced_binary_tree_validation::Solution as BalancedBinaryTreeValidatio
 
 mod right_most_nodes_binary_tree;
 pub use right_most_nodes_binary_tree::Solution as RightMostTreeBinaryTree;
+
+mod maximum_width_of_binary_tree;
+pub use maximum_width_of_binary_tree::Solution as MaximumWidthOfBinaryTree;
