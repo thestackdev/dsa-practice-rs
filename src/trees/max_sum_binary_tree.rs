@@ -42,4 +42,3 @@ impl Solution {
         node.val + left.max(right)
     }
 }
-

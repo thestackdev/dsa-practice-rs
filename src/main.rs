@@ -51,6 +51,7 @@ mod two_pointers;
 // use algorithms::MaxHeap;
 // use algorithms::DoublyLinkedList;
 // use algorithms::Tree;
+use algorithms::Trie;
 
 // use heaps::K_MOST_FREQ_ELEMENTS;
 // use heaps::TOP_K_FREQ_ELEMENTS;
@@ -67,4 +68,21 @@ mod two_pointers;
 
 // use trees::InvertBinaryTree;
 
-fn main() {}
+fn main() {
+    let mut trie = Trie::new();
+
+    trie.insert("apple");
+    trie.insert("app");
+    trie.insert("application");
+    trie.insert("banana");
+
+    println!("{}", trie.search("app")); // true
+    println!("{}", trie.starts_with("ap")); // false
+    println!("{}", trie.starts_with("app")); // true
+
+    println!("{:?}", trie.autocomplete("app")); // ["app", "apple", "application"]
+
+    trie.delete("apple");
+    println!("{}", trie.search("apple")); // false
+    println!("{}", trie.search("app")); // true (unaffected)
+}

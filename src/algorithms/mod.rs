@@ -12,3 +12,6 @@ pub use doubly_linked_list::DoublyLinkedList;
 
 mod trees;
 pub use trees::Tree;
+
+mod trie;
+pub use trie::Trie;
