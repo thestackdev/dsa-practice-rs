@@ -4,6 +4,8 @@ use std::{
     vec,
 };
 
+use crate::algorithms::Tree;
+
 #[derive(Default)]
 struct TrieNode {
     children: HashMap<char, TrieNode>,
@@ -27,8 +29,7 @@ impl Trie {
         for ch in word.chars() {
             node = node.children.entry(ch).or_default();
         }
-
-        node.is_end = true;
+        node.is_end = true
     }
 
     pub fn search(&self, word: &str) -> bool {
@@ -107,6 +108,33 @@ impl Trie {
             let mut current = current.clone();
             current.push(*ch);
             self.collect_words(child, current, results);
+        }
+    }
+
+    fn search_wildcard(&self, word: &str) -> bool {
+        let chars: Vec<char> = word.chars().collect();
+        Self::search_wildcard_helper(&self.root, &chars, 0)
+    }
+
+    fn search_wildcard_helper(node: &TrieNode, chars: &[char], depth: usize) -> bool {
+        if depth == chars.len() {
+            return node.is_end;
+        }
+
+        let ch = chars[depth];
+
+        if ch == '.' {
+            for (key, child) in &node.children {
+                if Self::search_wildcard_helper(child, chars, depth + 1) {
+                    return true;
+                }
+            }
+            false
+        } else {
+            match node.children.get(&ch) {
+                None => false,
+                Some(child) => Self::search_wildcard_helper(child, chars, depth + 1),
+            }
         }
     }
 }
