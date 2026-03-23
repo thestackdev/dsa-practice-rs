@@ -1,6 +1,7 @@
 #![allow(dead_code, unused_imports, unused_variables)]
 mod algorithms;
 mod binary_search;
+mod graphs;
 mod hashmap;
 mod heaps;
 mod intervals;
