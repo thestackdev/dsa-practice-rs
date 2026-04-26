@@ -17,22 +17,26 @@ impl Node {
 
 type Graph = HashMap<i32, Node>;
 
-fn clone_graph(graph: &Graph, start: i32) -> Graph {
-    let mut result: Graph = HashMap::new();
-    dfs(graph, start, &mut result);
-    result
-}
+pub struct Solution;
 
-fn dfs(graph: &Graph, val: i32, result: &mut Graph) {
-    if result.contains_key(&val) {
-        return;
+impl Solution {
+    fn clone_graph(self, graph: &Graph, start: i32) -> Graph {
+        let mut result: Graph = HashMap::new();
+        Self::dfs(graph, start, &mut result);
+        result
     }
 
-    if let Some(node) = graph.get(&val) {
-        result.insert(val, node.clone());
+    fn dfs(graph: &Graph, val: i32, result: &mut Graph) {
+        if result.contains_key(&val) {
+            return;
+        }
 
-        for nbr in node.neighbours.clone() {
-            dfs(graph, nbr, result);
+        if let Some(node) = graph.get(&val) {
+            result.insert(val, node.clone());
+
+            for nbr in node.neighbours.clone() {
+                Self::dfs(graph, nbr, result);
+            }
         }
     }
 }

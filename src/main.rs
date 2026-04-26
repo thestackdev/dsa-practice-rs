@@ -52,7 +52,7 @@ mod two_pointers;
 // use algorithms::MaxHeap;
 // use algorithms::DoublyLinkedList;
 // use algorithms::Tree;
-use algorithms::Trie;
+// use algorithms::Trie;
 
 // use heaps::K_MOST_FREQ_ELEMENTS;
 // use heaps::TOP_K_FREQ_ELEMENTS;
@@ -69,21 +69,17 @@ use algorithms::Trie;
 
 // use trees::InvertBinaryTree;
 
+use graphs::CountIslands;
+
 fn main() {
-    let mut trie = Trie::new();
+    let mut island = [
+        ['1', '1', '0', '0', '0'],
+        ['1', '1', '0', '0', '0'],
+        ['0', '0', '1', '0', '0'],
+        ['0', '0', '0', '1', '1'],
+    ]
+    .map(|r| r.to_vec())
+    .to_vec();
 
-    trie.insert("apple");
-    trie.insert("app");
-    trie.insert("application");
-    trie.insert("banana");
-
-    println!("{}", trie.search("app")); // true
-    println!("{}", trie.starts_with("ap")); // false
-    println!("{}", trie.starts_with("app")); // true
-
-    println!("{:?}", trie.autocomplete("app")); // ["app", "apple", "application"]
-
-    trie.delete("apple");
-    println!("{}", trie.search("apple")); // false
-    println!("{}", trie.search("app")); // true (unaffected)
+    println!("{}", CountIslands::num_islands(island));
 }
